@@ -1,0 +1,20 @@
+public static void PrintStack(Stack<Integer> s) 
+{ 
+     
+    // If stack is empty 
+    if (s.empty()) 
+        return; 
+   
+    // Extract top of the stack 
+    int x = s.peek(); 
+   
+    // Pop the top element 
+    s.pop(); 
+    
+    System.out.print(x + " ");
+
+    PrintStack(s); 
+   
+    // Push the element back 
+    s.push(x); 
+} 
