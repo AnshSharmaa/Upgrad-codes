@@ -2,27 +2,24 @@ import java.lang.String;
 import java.util.Scanner;
 
 public class Source{
-    public static void func2(int n){
-        if (n < 1) 
-    return; 
-    System.out.print( "*"); 
-    func2(n - 1); 
-    }
-    public static void func(int n) {
-        if (n < 1){
-         return; 
+    // function to print the required pattern
+    public static String func(int n) {
+          if (n < 1){
+         return ""; 
         }
-        func(n - 1); 
-
-    
-    func2(n);
-    System.out.println (); 
+        String s=func(n - 1);
+        for(int i=0;i<n;i++)
+        {
+            s=s+"*";
+        }
+        s=s+"\n";
+        return s;
     }
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        func(n);
+        System.out.print(func(n));
     }
 
 }
